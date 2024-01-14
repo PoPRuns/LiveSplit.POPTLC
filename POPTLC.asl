@@ -22,7 +22,7 @@ startup
     // the last checked list of active quests
     vars.ActiveQuests = new List<string>();
 
-    // vars.Helper.AlertLoadless();
+    vars.Helper.AlertLoadless();
 }
 
 init
