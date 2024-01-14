@@ -1,6 +1,5 @@
 name: Bug Report
 description: Something isn't working as expected.
-title: "[Triage]: "
 labels: ["triage", "bug"]
 assignees:
   - mitchell-merry
@@ -46,6 +45,8 @@ body:
       label: Link to a video with DebugView output.
       description: Please link a video of the behaviour you're seeing WITH DebugView, the game, and LiveSplit visible. See [this guide](https://www.youtube.com/watch?v=76xu36vsGgs).
       placeholder: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    validations:
+      required: true
   - type: textarea
     id: logs
     attributes:
