@@ -1,0 +1,56 @@
+name: Bug Report
+description: Something isn't working as expected.
+title: "[Triage]: "
+labels: ["triage", "bug"]
+assignees:
+  - mitchell-merry
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+        - label: I have searched the existing issues, and none exist
+          required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Did you install the autosplitter via the LiveSplit UI?
+      description: This makes sure you're using the latest version.
+      options:
+        - label: I installed the autosplitter via LiveSplit.
+          required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behaviour
+      description: What did you expect to happen?
+      placeholder: I expected the timer to start when I loaded a new save.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behaviour
+      description: What actually happened?
+      placeholder: The timer did not start.
+    validations:
+      required: true
+  - type: textarea
+    id: recording
+    attributes:
+      label: Link to a video with DebugView output.
+      description: Please link a video of the behaviour you're seeing WITH DebugView, the game, and LiveSplit visible. See [this guide](https://www.youtube.com/watch?v=76xu36vsGgs).
+      placeholder: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Optionally, copy and paste the relevant log output from DebugView.
+      render: Shell
+    validations:
+      required: false

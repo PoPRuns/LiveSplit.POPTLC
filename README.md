@@ -21,6 +21,6 @@ Damn! I'll need to see a video of the issue to help. Let's run through some basi
 2. Make sure "Compare Against" is set to "Game Time".
 3. Check that your Settings look as expected.
 
-If your issue persists, get a recording with DebugView installed. Check out this video tutorial on how to use it here: <link>.
+If your issue persists, get a recording with DebugView installed. Check out [this video tutorial](https://www.youtube.com/watch?v=76xu36vsGgs).
 
 Then raise an issue in this repository describing your problem.
