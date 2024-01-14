@@ -17,7 +17,7 @@ Then, set up your splits as you wish.
 ## I have an issue! 
 
 Damn! I'll need to see a video of the issue to help. Let's run through some basic troubleshooting:
-1. Go to "Edit Layout" and remove any "Scriptable Autosplitter" components.
+1. Go to "Edit Layout" and remove any "Scriptable Auto Splitter" components.
 2. Make sure "Compare Against" is set to "Game Time".
 3. Check that your Settings look as expected.
 
