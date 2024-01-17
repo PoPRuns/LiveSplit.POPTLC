@@ -1,10 +1,12 @@
 state("TheLostCrown") { }
+state("TheLostCrown_plus") { }
 
 startup
 {
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Unity");
     vars.Helper.GameName = "Prince of Persia: The Lost Crown";
     vars.Helper.LoadSceneManager = true;
+    vars.Helper.CustomMonoModules = new List<string>() { "GameAssembly.dll", "GameAssembly_plus.dll" };
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
 
     vars.Watch = (Action<IDictionary<string, object>, IDictionary<string, object>, string>)((oldLookup, currentLookup, key) => 
