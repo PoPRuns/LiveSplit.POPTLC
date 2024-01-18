@@ -6,9 +6,10 @@ startup
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Unity");
     vars.Helper.GameName = "Prince of Persia: The Lost Crown";
     vars.Helper.LoadSceneManager = true;
-    vars.Helper.IL2CPPModules = new string[] { "GameAssembly.dll", "GameAssembly_plus.dll" };
-    vars.Helper.DataFolder = "TheLostCrown_Data";
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
+    // The ubisoft+ version of this game is weird and requires overriding some config in asl-help
+    vars.Helper.Il2CppModules.Add("GameAssembly_plus.dll");
+    vars.Helper.DataDirectory = "TheLostCrown_Data";
 
     vars.Watch = (Action<IDictionary<string, object>, IDictionary<string, object>, string>)((oldLookup, currentLookup, key) => 
     {
