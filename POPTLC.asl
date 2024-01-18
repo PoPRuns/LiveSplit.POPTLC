@@ -7,6 +7,7 @@ startup
     vars.Helper.GameName = "Prince of Persia: The Lost Crown";
     vars.Helper.LoadSceneManager = true;
     vars.Helper.CustomIL2CPPModules = new List<string>() { "GameAssembly.dll", "GameAssembly_plus.dll" };
+    vars.Helper.DataFolder = "TheLostCrown_Data";
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
 
     vars.Watch = (Action<IDictionary<string, object>, IDictionary<string, object>, string>)((oldLookup, currentLookup, key) => 
