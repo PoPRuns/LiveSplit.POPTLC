@@ -6,6 +6,7 @@ startup
     vars.Helper.GameName = "Prince of Persia: The Lost Crown";
     vars.Helper.LoadSceneManager = true;
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
+    vars.Helper.StartFileLogger("POPTLC Autosplitter.log");
 
     vars.Watch = (Action<IDictionary<string, object>, IDictionary<string, object>, string>)((oldLookup, currentLookup, key) => 
     {
@@ -145,6 +146,7 @@ init
         var QME = mono["Alkawa.Gameplay", "QuestMenu"];
         var QMA = mono["Alkawa.Gameplay", "QuestManager"];
         var QC = mono["Alkawa.Gameplay", "QuestsContainer"];
+        var QB = mono["Alkawa.Gameplay", "QuestBase"];
 
         // List<QuestBase>
         vars.Helper["quests"] = UIM.MakeList<IntPtr>(
@@ -264,13 +266,16 @@ update
             var questName = vars.Helper.ReadString(
                 quest + 0x10 // Name 
             );
+            var questGUID = vars.Helper.ReadString(
+                quest + 0x60 
+            );
 
-            vars.Log("  " + questName);
+            vars.Log("  " + questName + " [" + questGUID + "]");
 
             vars.ActiveQuests.Add(questName);
             
             if (vars.SeenQuests.Add(questName)) {
-                vars.Log("Quest started! " + questName);
+                vars.Log("Quest started! " + questName + " [" + questGUID + "]");
             }
         }
 
