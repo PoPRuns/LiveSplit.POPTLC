@@ -27,7 +27,7 @@
             e36c64cd5a982ce4b8571f8190c1ad43
          -->
 
-        <Setting Id="quest_end_GUID_d46f01520560b6446a4c366171e5e6d2" Label="Lost in Mount Qaf" State="false" />
+        <Setting Id="quest_end_d46f01520560b6446a4c366171e5e6d2" Label="Lost in Mount Qaf" State="false" />
         <!-- 
             d46f01520560b6446a4c366171e5e6d2
 
@@ -36,7 +36,7 @@
             Defeat Jahandar
          -->
 
-        <Setting Id="quest_start_GUID_89a9bdf53da19a744b22fad494884202" Label="The Abducted Prince" State="false" />
+        <Setting Id="quest_start_89a9bdf53da19a744b22fad494884202" Label="The Abducted Prince" State="false" />
         <!-- 
             cbc6e45ab294c3b409021fa2ef3067fd
 
@@ -46,7 +46,7 @@
             Neutralize Vahram
          -->
 
-        <Setting Id="quest_end_GUID_89a9bdf53da19a744b22fad494884202" Label="The Tiger and the Rat" State="false" />
+        <Setting Id="quest_end_89a9bdf53da19a744b22fad494884202" Label="The Tiger and the Rat" State="false" />
         <!-- 
             89a9bdf53da19a744b22fad494884202
 
@@ -62,13 +62,13 @@
             Enter the Pit of Eternal Sands
          -->
 
-        <Setting Id="quest_The Darkest of Souls" Label="The Darkest of Souls" State="false" />
+        <Setting Id="quest_end_???" Label="The Darkest of Souls" State="false" />
         <!-- 
             Find the Darkest of Souls
             Convince the Darkest of Souls
          -->
 
-        <Setting Id="quest_The Celestial Guardians" Label="The Celestial Guardians" State="false" />
+        <Setting Id="quest_end_????" Label="The Celestial Guardians" State="false" />
         <!-- 
             Summon Tascheter, Guardian of the East
             Summon Haftorang, Guardian of the North
@@ -76,20 +76,20 @@
             Summon Satevis, Guardian of the South
          -->
 
-        <Setting Id="quest_Return to the Past" Label="Return to the Past" State="false" />
+        <Setting Id="quest_end_?????" Label="Return to the Past" State="false" />
         <!-- 
             Reach the Celestial Altar in the Upper city to return to the Past
             Neutralize Vahram and save Ghassan
          -->
 
-        <Setting Id="quest_Father and Son" Label="Father and Son" State="false" />
+        <Setting Id="quest_end_??????" Label="Father and Son" State="false" />
         <!-- 
             Find the Key of Kings in the Tower of Silence
             Use the Key of Kings to enter Darius' Palace
             Defeat King Darius
          -->
-         
-        <Setting Id="quest_The Crossroads of Time" Label="The Crossroads of Time (End)" State="true" />
+
+        <Setting Id="quest_end_???????" Label="The Crossroads of Time (End)" State="true" />
         <!-- 
             Reach the Simurgh Gate
             Stop Vahram

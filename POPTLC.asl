@@ -19,7 +19,7 @@ startup
 
     vars.CompletedSplits = new HashSet<string>();
     // All the quests that have been in progress during this run
-    vars.SeenQuests = new HashSet<dynamic>();
+    vars.SeenQuests = new HashSet<string>();
     // the last checked list of active quests
     vars.ActiveQuests = new List<string>();
 
@@ -224,9 +224,9 @@ update
 
             vars.ActiveQuests.Add(quest.GUID);
             
-            if (vars.SeenQuests.Add(quest)) {
+            if (vars.SeenQuests.Add(quest.GUID)) {
                 vars.Log("Quest started! " + quest.Name + " [" + quest.GUID + "]");
-                if (vars.CheckSplit("quest_start_GUID_" + quest.GUID))
+                if (vars.CheckSplit("quest_start_" + quest.GUID))
                 {
                     vars.Helper.Timer.Split();
                 }
@@ -236,12 +236,11 @@ update
         vars.Log("SEEN QUESTS (" + vars.SeenQuests.Count + "): ");
 
         foreach (var seenQuest in vars.SeenQuests) {
-            vars.Log("  " + seenQuest.Name + " [" + seenQuest.GUID + "]");
+            vars.Log("  " + seenQuest);
 
-            if (!vars.ActiveQuests.Contains(seenQuest.GUID)
-             && (vars.CheckSplit("quest_end_GUID_" + seenQuest.GUID)
-              || vars.CheckSplit("quest_" + seenQuest.Name)
-            )) {
+            if (!vars.ActiveQuests.Contains(seenQuest)
+             && vars.CheckSplit("quest_end_" + seenQuest)
+            ) {
                 vars.Helper.Timer.Split();
             }
         }
