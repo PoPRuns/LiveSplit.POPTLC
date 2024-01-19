@@ -273,6 +273,12 @@ update
             
             if (vars.SeenQuests.Add(questName)) {
                 vars.Log("Quest started! " + questName + " [" + questGUID + "]");
+                if (timer.CurrentPhase == TimerPhase.Running
+                 && settings.SplitEnabled
+                 && vars.CheckSplit("queststart_" + questName)
+                ) {
+                    vars.Helper.Timer.Split();
+                }
             }
         }
 

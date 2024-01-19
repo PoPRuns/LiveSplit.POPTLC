@@ -29,7 +29,7 @@
             Pursue Anahita
             Defeat Jahandar
          -->
-        <Setting Id="quest_The Abducted Prince" Label="The Abducted Prince" State="false" />
+        <Setting Id="queststart_The Tiger and the Rat" Label="The Abducted Prince" State="false" />
         <!-- 
             Head west to join forces with Vahram
             Go through the Sacred Archives to reach the Upper Citadel
