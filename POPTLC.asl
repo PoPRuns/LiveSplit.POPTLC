@@ -3,7 +3,7 @@ state("TheLostCrown") { }
 startup
 {
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Unity");
-    vars.Helper.GameName = "Prince of Persia: The Lost Crown";
+    vars.Helper.GameName = "POPTLC";
     vars.Helper.LoadSceneManager = true;
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
     vars.Helper.StartFileLogger("POPTLC Autosplitter.log");
@@ -249,10 +249,7 @@ update
         current.isChangingLevel = vars.states.Contains("GameFlowStateChangingLevel");
         current.isGSCutscene = vars.states.Contains("GameFlowStateCutScene");
 
-        vars.Log("[" + vars.states.Count + "] State set changed.");
-        foreach (var state in vars.states) {
-            vars.Log("  " + state);
-        }
+        vars.Log("[" + vars.states.Count + "] State set changed: " + string.Join(", ", vars.states));
     }
 
     if ((vars.ActiveQuests.Count != current.quests.Count && current.quests.Count != 0)
@@ -285,7 +282,7 @@ update
             vars.Log("  " + seenQuest);
 
             // lazy debugging beat
-            if (!vars.ActiveQuests.Contains(seenQuest)) { vars.Log("Quest maybe completed " + seenQuest); }
+            // if (!vars.ActiveQuests.Contains(seenQuest)) { vars.Log("Quest maybe completed " + seenQuest); }
             
             if (!vars.ActiveQuests.Contains(seenQuest)
              && timer.CurrentPhase == TimerPhase.Running
