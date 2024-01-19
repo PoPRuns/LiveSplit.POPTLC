@@ -1,6 +1,7 @@
 name: Feature Request
 description: An additional feature you'd like to see.
-labels: ["enhancement"]
+title: "[Feature]"
+labels: ["triage", "enhancement"]
 assignees:
   - mitchell-merry
 body:
