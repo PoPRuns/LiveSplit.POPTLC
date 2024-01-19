@@ -174,10 +174,8 @@ init
     // this function is a helper for checking splits that may or may not exist in settings,
     // and if we want to do them only once
     vars.CheckSplit = (Func<string, bool>)(key => {
-        // make sure timer is running
-        if (timer.CurrentPhase == TimerPhase.Running
-         && settings.SplitEnabled
-        ) {
+        // make sure splits are enabled and timer is running
+        if (!settings.SplitEnabled || timer.CurrentPhase != TimerPhase.Running) {
             return false;
         }
 
