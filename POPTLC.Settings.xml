@@ -62,8 +62,10 @@
             Enter the Pit of Eternal Sands
          -->
 
-        <Setting Id="quest_end_???" Label="The Darkest of Souls" State="false" />
+        <Setting Id="quest_end_59d515cfe12ef084d8df7ab2c38cce21" Label="The Darkest of Souls" State="false" />
         <!-- 
+            59d515cfe12ef084d8df7ab2c38cce21
+            
             Find the Darkest of Souls
             Convince the Darkest of Souls
          -->
