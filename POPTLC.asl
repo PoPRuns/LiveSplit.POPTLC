@@ -1,10 +1,16 @@
 state("TheLostCrown") { }
+state("TheLostCrown_plus") { }
 
 startup
 {
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Unity");
     vars.Helper.GameName = "POPTLC";
     vars.Helper.LoadSceneManager = true;
+    
+    // The ubisoft+ version of this game is weird and requires overriding some config in asl-help
+    vars.Helper.Il2CppModules.Add("GameAssembly_plus.dll");
+    vars.Helper.DataDirectory = "TheLostCrown_Data";
+
     vars.Helper.Settings.CreateFromXml("Components/POPTLC.Settings.xml");
     vars.Helper.StartFileLogger("POPTLC Autosplitter.log");
 
