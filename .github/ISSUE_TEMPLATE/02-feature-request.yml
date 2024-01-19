@@ -1,0 +1,33 @@
+name: Feature Request
+description: An additional feature you'd like to see.
+labels: ["enhancement"]
+assignees:
+  - mitchell-merry
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the new feature you would like.
+      placeholder: Splits for boss kills.
+    validations:
+      required: true
+  - type: textarea
+    id: video
+    attributes:
+      label: Link to a video with timestamps.
+      description: A video with timestamp(s) related to the feature you want to see.
+      placeholder: https://www.youtube.com/watch?v=dQw4w9WgXcQ at 13:55 shows the first boss kill, 21:42 shows the second.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Are you willing to help test?
+      description: This increases the chance that this feature will be implemented significantly
+      options:
+        - label: I can help test the feature.
