@@ -186,12 +186,20 @@ init
             UIM["m_BossHealthBar"] + PAD
         );
 
+        vars.Helper["boss1HSI"] = UIM.Make<IntPtr>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD
+        );
+        vars.Helper["boss1HSI"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+
         vars.Helper["boss1Health"] = UIM.Make<int>(
             "m_instance",
             UIM["m_BossHealthBar"] + PAD,
             UI_HP["m_healthStateInfo"] + PAD,
             HSI["m_internalCurrentHP"] + PAD
         );
+        vars.Helper["boss1Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 
         vars.Helper["boss1HealthState"] = UIM.Make<int>(
             "m_instance",
@@ -282,6 +290,8 @@ update
     vars.Watch(old, current, "level");
     vars.Watch(old, current, "shortLevel");
     vars.Watch(old, current, "inputMode");
+    vars.Watch(old, current, "boss1");
+    vars.Watch(old, current, "boss1HSI");
     vars.Watch(old, current, "boss1Health");
     vars.Watch(old, current, "boss1HealthState");
     vars.Watch(old, current, "boss1LocId");
