@@ -236,6 +236,7 @@ init
             UI_HP["m_healthStateInfo"] + PAD,
             HSI["m_internalCurrentHP"] + PAD
         );
+        vars.Helper["boss2Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 
         vars.Helper["boss2HealthState"] = UIM.Make<int>(
             "m_instance",
@@ -414,6 +415,14 @@ split
     if (old.shortLevel != current.shortLevel && vars.CheckSplit("inlevel_" + current.shortLevel))
     {
         return true;
+    }
+
+    if (settings["boss"])
+    {
+        var bothDead = current.boss1Health <= 0 && current.boss2Health <= 0;
+        var oneWasAlive = (old.boss1Health > 0 || old.boss2Health > 0);
+        var key = "boss__" + current.boss1LocId + "__" + current.level;
+        return bothDead && oneWasAlive && vars.CheckSplit(key);
     }
 
     return false;

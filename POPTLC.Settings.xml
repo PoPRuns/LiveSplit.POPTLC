@@ -23,30 +23,30 @@
     <Setting Id="start_rebind" Label="Start after rebinding controls" State="false" />
     
     <Setting Id="boss" Label="Split on beating boss" State="false">
-        <!-- boss_name localisation id__starting health -->
-        <Setting Id="boss__7415__250" Label="General Uvishka" State="false" />
-        <Setting Id="boss__14269__150" Label="Sword Master" State="false" />
-        <Setting Id="boss__2922__290" Label="Undead Prisoner" State="false" />
-        <Setting Id="boss__2925__340" Label="Erlik" State="false" />
-        <Setting Id="boss__7416__850" Label="Jahandar" State="false" />
+        <!-- boss_name localisation id__boss room -->
+        <Setting Id="boss__7415__KIN_BAT_08_Boss" Label="General Uvishka" State="false" />
+        <Setting Id="boss__14269__KIN_THO_03" Label="Sword Master" State="false" />
+        <Setting Id="boss__2922__CIT_LOW_13" Label="Undead Prisoner" State="false" />
+        <Setting Id="boss__2925__HYR_AUT_05_ErlikArena" Label="Erlik" State="false" />
+        <Setting Id="boss__7416__CIT_LOW_06_BOSS" Label="Jahandar" State="false" />
         <!-- you don't actually kill this one -->
-        <!-- <Setting Id="boss__7414__550" Label="Vahram 1" State="false" /> -->
-        <Setting Id="boss__7413__300" Label="Alternate Sargon (The Depths)" State="false" />
-        <Setting Id="boss__2927__800" Label="Kiana" State="false" />
-        <Setting Id="boss__7417__800" Label="Azdaha" State="false" />
-        <Setting Id="boss__7419__1020" Label="Orod" State="false" />
-        <Setting Id="boss__7420__1000" Label="Menolias" State="false" />
-        <Setting Id="boss__7414__950" Label="Vahram 2" State="false" />
-        <Setting Id="boss__7418__1400" Label="King Darius" State="false" />
+        <!-- <Setting Id="boss__7414__UPP_04" Label="Vahram 1" State="false" /> -->
+        <Setting Id="boss__7413__CIT_DEP_09_CorruptedSargon" Label="Alternate Sargon (The Depths)" State="false" />
+        <Setting Id="boss__2927__HYR_SOM_14_ForestQueen" Label="Kiana" State="false" />
+        <Setting Id="boss__7417__END_PIT_20_AzdahaArena" Label="Azdaha" State="false" />
+        <Setting Id="boss__7419__VAL_RAG_13_Orod" Label="Orod" State="false" />
+        <Setting Id="boss__7420__CIT_UPP_06_Menolias_Arena" Label="Menolias" State="false" />
+        <Setting Id="boss__7414__CIT_UPP_04_Varham_Arena" Label="Vahram 2" State="false" />
+        <Setting Id="boss__7418__NEC_TOW_04_DARIUS" Label="King Darius" State="false" />
         <!-- i don't think we'd actually want to split on killing this one -->
         <!-- <Setting Id="boss__7414__650" Label="Vahram 3" State="false" /> -->
-        <Setting Id="boss__3454__340" Label="Undead Erlik" State="false" />
-        <Setting Id="boss__7548__375" Label="Giant Crab" State="false" />
-        <Setting Id="boss__7056__675" Label="Ardashir" State="false" />
-        <Setting Id="boss__7413__270" Label="Alternate Sargon (Sacred Archives)" State="false" />
+        <Setting Id="boss__3454__CIT_DEP_11_UndeadErlik" Label="Undead Erlik" State="false" />
+        <Setting Id="boss__7548__CIT_DEP02_03_nolight2_sphincterhall" Label="Giant Crab" State="false" />
+        <Setting Id="boss__7056__CIT_LOW_22_Radjen" Label="Ardashir" State="false" />
+        <!-- <Setting Id="boss__7413__270" Label="Alternate Sargon (Sacred Archives)" State="false" /> -->
         <!-- there are two of them -->
-        <Setting Id="boss__7413__225" Label="Alternate Sargons (Hyrcanian Forest)" State="false" />
-        <Setting Id="boss__7413__350" Label="Alternate Sargon (Pit of Eternal Sand)" State="false" />
+        <Setting Id="boss__7413__HYR_SOM_22_CorruptedTwinSargon" Label="Alternate Sargons (Hyrcanian Forest)" State="false" />
+        <Setting Id="boss__7413__END_PIT_15_CorruptedSargon" Label="Alternate Sargon (Pit of Eternal Sand)" State="false" />
         <!-- <Setting Id="boss____" Label="" State="false" /> -->
     </Setting>
 
