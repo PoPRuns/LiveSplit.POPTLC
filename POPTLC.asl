@@ -179,6 +179,7 @@ init
         var HSI = mono["Alkawa.Gameplay", "HealthStateInfo"];
         var ED = mono["Alkawa.Gameplay", "EntityDescriptor"];
         var UISLI = mono["Alkawa.Gameplay", "UISmartLocId"];
+        var TMPUGUI = mono["Unity.TextMeshPro", "TextMeshProUGUI", 1];
 
         vars.Helper["boss1"] = UIM.Make<IntPtr>(
             "m_instance",
@@ -214,6 +215,13 @@ init
             UISLI["m_locId"] + PAD
         );
 
+        vars.Helper["boss1Text"] = UIM.MakeString(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_BossName"] + PAD,
+            TMPUGUI["m_text"] + PAD
+        );
+
         vars.Helper["boss2Health"] = UIM.Make<int>(
             "m_instance",
             UIM["m_SecondBossHealthBar"] + PAD,
@@ -233,6 +241,14 @@ init
             UIM["m_SecondBossHealthBar"] + PAD,
             UI_HP["m_entityDescriptor"] + PAD,
             ED["m_characterID"] + PAD
+        );
+
+        vars.Helper["boss2LocId"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_SecondBossHealthBar"] + PAD,
+            UI_HP["m_entityDescriptor"] + PAD,
+            ED["Name"] + PAD,
+            UISLI["m_locId"] + PAD
         );
 
         return true;
@@ -269,10 +285,12 @@ update
     vars.Watch(old, current, "boss1Health");
     vars.Watch(old, current, "boss1HealthState");
     vars.Watch(old, current, "boss1LocId");
+    vars.Watch(old, current, "boss1Text");
     vars.Watch(old, current, "boss1Id");
     vars.Watch(old, current, "boss2Health");
     vars.Watch(old, current, "boss2HealthState");
     vars.Watch(old, current, "boss2Id");
+    vars.Watch(old, current, "boss2LocId");
 
     if (vars.states == null || vars.states.Count != current.activeStatesCount) {
         vars.states = vars.GetStates();
@@ -345,10 +363,12 @@ onStart
     vars.Log(current.boss1Health);
     vars.Log(current.boss1HealthState);
     vars.Log(current.boss1LocId);
+    vars.Log(current.boss1Text);
     vars.Log(current.boss1Id);
     vars.Log(current.boss2Health);
     vars.Log(current.boss2HealthState);
-    vars.Log(current.boss1Id);
+    vars.Log(current.boss2Id);
+    vars.Log(current.boss2LocId);
 }
 
 start
