@@ -21,6 +21,15 @@
     </Setting> -->
 
     <Setting Id="start_rebind" Label="Start after rebinding controls" State="false" />
+    
+    <Setting Id="boss" Label="Split on beating boss" State="false">
+        <!-- 
+
+            
+
+         -->
+    </Setting>
+
     <Setting Id="quest" Label="Split on completing a quest" State="true">
         <Setting Id="inlevel_OLD_01" Label="Persia Under Attack (Battlefield + Thomyris Palace)" State="false" />
         <!-- 

@@ -174,6 +174,67 @@ init
             return ret;
         });
 
+        // Boss
+        var UI_HP = mono["Alkawa.Gameplay", "UI_HP", 1];
+        var HSI = mono["Alkawa.Gameplay", "HealthStateInfo"];
+        var ED = mono["Alkawa.Gameplay", "EntityDescriptor"];
+        var UISLI = mono["Alkawa.Gameplay", "UISmartLocId"];
+
+        vars.Helper["boss1"] = UIM.Make<IntPtr>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD
+        );
+
+        vars.Helper["boss1Health"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_internalCurrentHP"] + PAD
+        );
+
+        vars.Helper["boss1HealthState"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_healthState"] + PAD
+        );
+
+        vars.Helper["boss1Id"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_entityDescriptor"] + PAD,
+            ED["m_characterID"] + PAD
+        );
+
+        vars.Helper["boss1LocId"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_entityDescriptor"] + PAD,
+            ED["Name"] + PAD,
+            UISLI["m_locId"] + PAD
+        );
+
+        vars.Helper["boss2Health"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_SecondBossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_internalCurrentHP"] + PAD
+        );
+
+        vars.Helper["boss2HealthState"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_SecondBossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_healthState"] + PAD
+        );
+
+        vars.Helper["boss2Id"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_SecondBossHealthBar"] + PAD,
+            UI_HP["m_entityDescriptor"] + PAD,
+            ED["m_characterID"] + PAD
+        );
+
         return true;
     });
 
@@ -205,6 +266,13 @@ update
     vars.Watch(old, current, "level");
     vars.Watch(old, current, "shortLevel");
     vars.Watch(old, current, "inputMode");
+    vars.Watch(old, current, "boss1Health");
+    vars.Watch(old, current, "boss1HealthState");
+    vars.Watch(old, current, "boss1LocId");
+    vars.Watch(old, current, "boss1Id");
+    vars.Watch(old, current, "boss2Health");
+    vars.Watch(old, current, "boss2HealthState");
+    vars.Watch(old, current, "boss2Id");
 
     if (vars.states == null || vars.states.Count != current.activeStatesCount) {
         vars.states = vars.GetStates();
@@ -272,6 +340,15 @@ onStart
     vars.Log(current.inputMode);
     vars.Log(current.activeStatesHead.ToString("X"));
     vars.Log(current.activeStatesCount);
+
+    vars.Log(current.boss1.ToString("X"));
+    vars.Log(current.boss1Health);
+    vars.Log(current.boss1HealthState);
+    vars.Log(current.boss1LocId);
+    vars.Log(current.boss1Id);
+    vars.Log(current.boss2Health);
+    vars.Log(current.boss2HealthState);
+    vars.Log(current.boss1Id);
 }
 
 start
