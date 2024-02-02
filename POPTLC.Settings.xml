@@ -23,11 +23,31 @@
     <Setting Id="start_rebind" Label="Start after rebinding controls" State="false" />
     
     <Setting Id="boss" Label="Split on beating boss" State="false">
-        <!-- 
-
-            
-
-         -->
+        <!-- boss_name localisation id__starting health -->
+        <Setting Id="boss__7415__250" Label="General Uvishka" State="false" />
+        <Setting Id="boss__14269__150" Label="Sword Master" State="false" />
+        <Setting Id="boss__2922__290" Label="Undead Prisoner" State="false" />
+        <Setting Id="boss__2925__340" Label="Erlik" State="false" />
+        <Setting Id="boss__7416__850" Label="Jahandar" State="false" />
+        <!-- you don't actually kill this one -->
+        <!-- <Setting Id="boss__7414__550" Label="Vahram 1" State="false" /> -->
+        <Setting Id="boss__7413__300" Label="Alternate Sargon (The Depths)" State="false" />
+        <Setting Id="boss__2927__800" Label="Kiana" State="false" />
+        <Setting Id="boss__7417__800" Label="Azdaha" State="false" />
+        <Setting Id="boss__7419__1020" Label="Orod" State="false" />
+        <Setting Id="boss__7420__1000" Label="Menolias" State="false" />
+        <Setting Id="boss__7414__950" Label="Vahram 2" State="false" />
+        <Setting Id="boss__7418__1400" Label="King Darius" State="false" />
+        <!-- i don't think we'd actually want to split on killing this one -->
+        <!-- <Setting Id="boss__7414__650" Label="Vahram 3" State="false" /> -->
+        <Setting Id="boss__3454__340" Label="Undead Erlik" State="false" />
+        <Setting Id="boss__7548__375" Label="Giant Crab" State="false" />
+        <Setting Id="boss__7056__675" Label="Ardashir" State="false" />
+        <Setting Id="boss__7413__270" Label="Alternate Sargon (Sacred Archives)" State="false" />
+        <!-- there are two of them -->
+        <Setting Id="boss__7413__225" Label="Alternate Sargons (Hyrcanian Forest)" State="false" />
+        <Setting Id="boss__7413__350" Label="Alternate Sargon (Pit of Eternal Sand)" State="false" />
+        <!-- <Setting Id="boss____" Label="" State="false" /> -->
     </Setting>
 
     <Setting Id="quest" Label="Split on completing a quest" State="true">
