@@ -201,6 +201,13 @@ init
         );
         vars.Helper["boss1Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 
+        vars.Helper["boss1MaxHealth"] = UIM.Make<int>(
+            "m_instance",
+            UIM["m_BossHealthBar"] + PAD,
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_BaseMaxHP"] + PAD
+        );
+
         vars.Helper["boss1HealthState"] = UIM.Make<int>(
             "m_instance",
             UIM["m_BossHealthBar"] + PAD,
@@ -294,6 +301,7 @@ update
     vars.Watch(old, current, "boss1");
     vars.Watch(old, current, "boss1HSI");
     vars.Watch(old, current, "boss1Health");
+    vars.Watch(old, current, "boss1MaxHealth");
     vars.Watch(old, current, "boss1HealthState");
     vars.Watch(old, current, "boss1LocId");
     vars.Watch(old, current, "boss1Text");
@@ -372,6 +380,7 @@ onStart
 
     vars.Log(current.boss1.ToString("X"));
     vars.Log(current.boss1Health);
+    vars.Log(current.boss1MaxHealth);
     vars.Log(current.boss1HealthState);
     vars.Log(current.boss1LocId);
     vars.Log(current.boss1Text);
