@@ -44,10 +44,8 @@
         <Setting Id="boss__7548__CIT_DEP02_03_nolight2_sphincterhall" Label="Giant Crab" State="false" />
         <Setting Id="boss__7056__CIT_LOW_22_Radjen" Label="Ardashir" State="false" />
         <!-- <Setting Id="boss__7413__270" Label="Alternate Sargon (Sacred Archives)" State="false" /> -->
-        <!-- there are two of them -->
         <Setting Id="boss__7413__HYR_SOM_22_CorruptedTwinSargon" Label="Alternate Sargons (Hyrcanian Forest)" State="false" />
         <Setting Id="boss__7413__END_PIT_15_CorruptedSargon" Label="Alternate Sargon (Pit of Eternal Sand)" State="false" />
-        <!-- <Setting Id="boss____" Label="" State="false" /> -->
     </Setting>
 
     <Setting Id="quest" Label="Split on completing a quest" State="true">

@@ -247,8 +247,6 @@ update
     vars.Watch(old, current, "level");
     vars.Watch(old, current, "shortLevel");
     vars.Watch(old, current, "inputMode");
-    vars.Watch(old, current, "boss1");
-    vars.Watch(old, current, "boss1HSI");
     vars.Watch(old, current, "boss1LocId");
     vars.Watch(old, current, "boss1Health");
     vars.Watch(old, current, "boss2Health");
