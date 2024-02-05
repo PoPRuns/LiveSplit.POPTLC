@@ -38,8 +38,8 @@
         <Setting Id="boss__7420__CIT_UPP_06_Menolias_Arena" Label="Menolias" State="false" />
         <Setting Id="boss__7414__CIT_UPP_04_Varham_Arena" Label="Vahram 2" State="false" />
         <Setting Id="boss__7418__NEC_TOW_04_DARIUS" Label="King Darius" State="false" />
-        <!-- i don't think we'd actually want to split on killing this one -->
-        <!-- <Setting Id="boss__7414__650" Label="Vahram 3" State="false" /> -->
+        <!-- Custom setting for the end of the game -->
+        <Setting Id="vahram3" Label="Vahram 3 (END SPLIT)" State="true" />
         <Setting Id="boss__3454__CIT_DEP_11_UndeadErlik" Label="Undead Erlik" State="false" />
         <Setting Id="boss__7548__CIT_DEP02_03_nolight2_sphincterhall" Label="Giant Crab" State="false" />
         <Setting Id="boss__7056__CIT_LOW_22_Radjen" Label="Ardashir" State="false" />

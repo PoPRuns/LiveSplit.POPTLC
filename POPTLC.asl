@@ -128,6 +128,18 @@ init
             PISC["m_inputStateInfo"] + PAD,
             PISI["m_inputMode"] + PAD
         ); 
+
+        var PASC = mono["Alkawa.Gameplay", "PlayerAbilitiesSubComponent"];
+        var PASI = mono["Alkawa.Gameplay", "PlayerAbilitiesStateInfo"];
+        var ABILITY = mono["Alkawa.Gameplay", "Ability"];
+       
+        vars.Helper["playerAction"] = PM.Make<int>(
+            "m_PlayerComponent",
+            PC["PlayerAbilities"] + PAD,
+            PASC["m_stateInfo"] + PAD,
+            PASI["m_ability"] + PAD,
+            ABILITY["m_currentPlayerActionInternal"] + PAD
+        ); 
         
         var LM = mono["Alkawa.Gameplay", "LootManager", 1];
         var LI = mono["Alkawa.Engine", "LevelInstance"];
@@ -179,48 +191,6 @@ init
         var HSI = mono["Alkawa.Gameplay", "HealthStateInfo"];
         var ED = mono["Alkawa.Gameplay", "EntityDescriptor"];
         var UISLI = mono["Alkawa.Gameplay", "UISmartLocId"];
-        var TMPUGUI = mono["Unity.TextMeshPro", "TextMeshProUGUI", 1];
-
-        vars.Helper["boss1"] = UIM.Make<IntPtr>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD
-        );
-
-        vars.Helper["boss1HSI"] = UIM.Make<IntPtr>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_healthStateInfo"] + PAD
-        );
-        vars.Helper["boss1HSI"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-
-        vars.Helper["boss1Health"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_healthStateInfo"] + PAD,
-            HSI["m_internalCurrentHP"] + PAD
-        );
-        vars.Helper["boss1Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-
-        vars.Helper["boss1MaxHealth"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_healthStateInfo"] + PAD,
-            HSI["m_BaseMaxHP"] + PAD
-        );
-
-        vars.Helper["boss1HealthState"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_healthStateInfo"] + PAD,
-            HSI["m_healthState"] + PAD
-        );
-
-        vars.Helper["boss1Id"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_entityDescriptor"] + PAD,
-            ED["m_characterID"] + PAD
-        );
 
         vars.Helper["boss1LocId"] = UIM.Make<int>(
             "m_instance",
@@ -230,12 +200,13 @@ init
             UISLI["m_locId"] + PAD
         );
 
-        vars.Helper["boss1Text"] = UIM.MakeString(
+        vars.Helper["boss1Health"] = UIM.Make<int>(
             "m_instance",
             UIM["m_BossHealthBar"] + PAD,
-            UI_HP["m_BossName"] + PAD,
-            TMPUGUI["m_text"] + PAD
+            UI_HP["m_healthStateInfo"] + PAD,
+            HSI["m_internalCurrentHP"] + PAD
         );
+        vars.Helper["boss1Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 
         vars.Helper["boss2Health"] = UIM.Make<int>(
             "m_instance",
@@ -244,28 +215,6 @@ init
             HSI["m_internalCurrentHP"] + PAD
         );
         vars.Helper["boss2Health"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-
-        vars.Helper["boss2HealthState"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_SecondBossHealthBar"] + PAD,
-            UI_HP["m_healthStateInfo"] + PAD,
-            HSI["m_healthState"] + PAD
-        );
-
-        vars.Helper["boss2Id"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_SecondBossHealthBar"] + PAD,
-            UI_HP["m_entityDescriptor"] + PAD,
-            ED["m_characterID"] + PAD
-        );
-
-        vars.Helper["boss2LocId"] = UIM.Make<int>(
-            "m_instance",
-            UIM["m_SecondBossHealthBar"] + PAD,
-            UI_HP["m_entityDescriptor"] + PAD,
-            ED["Name"] + PAD,
-            UISLI["m_locId"] + PAD
-        );
 
         return true;
     });
@@ -300,16 +249,10 @@ update
     vars.Watch(old, current, "inputMode");
     vars.Watch(old, current, "boss1");
     vars.Watch(old, current, "boss1HSI");
-    vars.Watch(old, current, "boss1Health");
-    vars.Watch(old, current, "boss1MaxHealth");
-    vars.Watch(old, current, "boss1HealthState");
     vars.Watch(old, current, "boss1LocId");
-    vars.Watch(old, current, "boss1Text");
-    vars.Watch(old, current, "boss1Id");
+    vars.Watch(old, current, "boss1Health");
     vars.Watch(old, current, "boss2Health");
-    vars.Watch(old, current, "boss2HealthState");
-    vars.Watch(old, current, "boss2Id");
-    vars.Watch(old, current, "boss2LocId");
+    vars.Watch(old, current, "playerAction");
 
     if (vars.states == null || vars.states.Count != current.activeStatesCount) {
         vars.states = vars.GetStates();
@@ -375,20 +318,13 @@ onStart
     vars.Log(current.isPaused);
     vars.Log(current.level);
     vars.Log(current.inputMode);
+    vars.Log(current.playerAction);
     vars.Log(current.activeStatesHead.ToString("X"));
     vars.Log(current.activeStatesCount);
 
-    vars.Log(current.boss1.ToString("X"));
-    vars.Log(current.boss1Health);
-    vars.Log(current.boss1MaxHealth);
-    vars.Log(current.boss1HealthState);
     vars.Log(current.boss1LocId);
-    vars.Log(current.boss1Text);
-    vars.Log(current.boss1Id);
+    vars.Log(current.boss1Health);
     vars.Log(current.boss2Health);
-    vars.Log(current.boss2HealthState);
-    vars.Log(current.boss2Id);
-    vars.Log(current.boss2LocId);
 }
 
 start
@@ -430,9 +366,12 @@ split
     {
         var bothDead = current.boss1Health <= 0 && current.boss2Health <= 0;
         var oneWasAlive = (old.boss1Health > 0 || old.boss2Health > 0);
+        var playerAlive = !vars.states.Contains("GameFlowStateGameOver");
         var key = "boss__" + current.boss1LocId + "__" + current.level;
-        return bothDead && oneWasAlive && vars.CheckSplit(key);
+        
+        return bothDead && oneWasAlive && playerAlive && vars.CheckSplit(key);
     }
 
-    return false;
+    // EPlayerAction 192 is QTEIntroVariationBoss_VGD, the last input.
+    return settings["vahram3"] && old.playerAction == 192 && current.playerAction != 0;
 }
