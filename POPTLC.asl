@@ -355,7 +355,7 @@ isLoading
 
 split
 {
-    if (old.shortLevel != current.shortLevel && vars.CheckSplit("inlevel_" + current.shortLevel))
+    if (settings["inlevel"] && old.shortLevel != current.shortLevel && vars.CheckSplit("inlevel_" + current.shortLevel))
     {
         return true;
     }
@@ -371,8 +371,9 @@ split
         {
             return true;
         }
-    }
 
-    // EPlayerAction 192 is QTEIntroVariationBoss_VGD, the last input.
-    return settings["vahram3"] && old.playerAction == 192 && current.playerAction != 192;
+        if (old.playerAction != current.playerAction && vars.CheckSplit("player_action__" + old.playerAction)) {
+            return true;
+        }
+    }
 }
