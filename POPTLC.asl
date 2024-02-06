@@ -367,9 +367,12 @@ split
         var playerAlive = !vars.states.Contains("GameFlowStateGameOver");
         var key = "boss__" + current.boss1LocId + "__" + current.level;
         
-        return bothDead && oneWasAlive && playerAlive && vars.CheckSplit(key);
+        if (bothDead && oneWasAlive && playerAlive && vars.CheckSplit(key))
+        {
+            return true;
+        }
     }
 
     // EPlayerAction 192 is QTEIntroVariationBoss_VGD, the last input.
-    return settings["vahram3"] && old.playerAction == 192 && current.playerAction != 0;
+    return settings["vahram3"] && old.playerAction == 192 && current.playerAction != 192;
 }
