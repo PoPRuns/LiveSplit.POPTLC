@@ -21,11 +21,6 @@
     </Setting> -->
 
     <Setting Id="start_rebind" Label="Start after rebinding controls" State="false" />
-    
-    <Setting Id="inlevel" Label="Split on entering a level" State="true">
-        <Setting Id="inlevel_OLD_01" Label="Old Royal Road" State="false" ToolTip="Battlefield + Thomyris Palace" />
-        <Setting Id="inlevel_PIT_01" Label="Pit of Eternal Sands" State="false" />
-    </Setting>
 
     <Setting Id="boss" Label="Split on beating boss" State="true">
         <!-- boss_name localisation id__boss room -->
@@ -42,14 +37,14 @@
         
         <Setting Id="orod" Label="Orod" State="false">
             <!-- EPlayerAction 193 is QTEIntroVariationBoss_ORO -->
-            <Setting Id="player_action__193" Label="QTE" State="true" />
-            <Setting Id="boss__7419__VAL_RAG_13_Orod" Label="Cutscene" State="false" />
+            <Setting Id="player_action__193" Label="Split on the Quick-Time Event (QTE)" State="true" />
+            <Setting Id="boss__7419__VAL_RAG_13_Orod" Label="Split on the cutscene after the QTE" State="false" />
         </Setting>
         
         <Setting Id="menolias" Label="Menolias" State="false">
             <!-- EPlayerAction 191 is QTEIntroVariationBoss_MNL -->
-            <Setting Id="player_action__191" Label="QTE" State="true" />
-            <Setting Id="boss__7420__CIT_UPP_06_Menolias_Arena" Label="Cutscene" State="false" />
+            <Setting Id="player_action__191" Label="Split on the Quick-Time Event (QTE)" State="true" />
+            <Setting Id="boss__7420__CIT_UPP_06_Menolias_Arena" Label="Split on the cutscene after the QTE" State="false" />
         </Setting>
         
         <Setting Id="boss__7418__NEC_TOW_04_DARIUS" Label="King Darius" State="false" />
@@ -65,8 +60,10 @@
         <Setting Id="boss__7413__END_PIT_15_CorruptedSargon" Label="Alternate Sargon (Pit of Eternal Sand)" State="false" />
     </Setting>
 
-    <Setting Id="quest" Label="Split on completing a quest" State="true">
-        <Setting Id="quest_end_d46f01520560b6446a4c366171e5e6d2" Label="Lost in Mount Qaf" State="false" ToolTip="Splits after defeating Jahandar" />
+    <Setting Id="quest" Label="Split on story progression" State="true">
+        <Setting Id="inlevel_OLD_01" Label="Enter Mount Qaf" State="false" ToolTip="Splits on entering Mount Qaf after Battlefield and Thomyris Palace" />
+        
+        <Setting Id="quest_end_d46f01520560b6446a4c366171e5e6d2" Label="Quest: Lost in Mount Qaf" State="false" ToolTip="Splits after defeating Jahandar" />
         <!-- 
             d46f01520560b6446a4c366171e5e6d2
 
@@ -75,7 +72,7 @@
             Defeat Jahandar
          -->
 
-        <Setting Id="quest_start_89a9bdf53da19a744b22fad494884202" Label="The Abducted Prince" State="false" ToolTip="Splits after Varham 1 encounter" />
+        <Setting Id="quest_start_89a9bdf53da19a744b22fad494884202" Label="Quest: The Abducted Prince" State="false" ToolTip="Splits after Varham 1 encounter" />
         <!-- 
             cbc6e45ab294c3b409021fa2ef3067fd
 
@@ -85,15 +82,16 @@
             Neutralize Vahram
          -->
 
-        <Setting Id="quest_end_89a9bdf53da19a744b22fad494884202" Label="The Tiger and the Rat" State="false" ToolTip="Splits on talking to old man after getting shadow" />
+        <Setting Id="quest_end_89a9bdf53da19a744b22fad494884202" Label="Quest: The Tiger and the Rat" State="false" ToolTip="Splits on talking to old man after getting shadow" />
         <!-- 
             89a9bdf53da19a744b22fad494884202
 
             Chase after the Old Man in the Depths of the Citadel to get your Eye back
          -->
 
+        <Setting Id="inlevel_PIT_01" Label="Enter Pit of Eternal Sands" State="false" ToolTip="Splits on entering Pit of Eternal Sands for the first time"/>
 
-        <Setting Id="quest_end_59d515cfe12ef084d8df7ab2c38cce21" Label="The Darkest of Souls" State="false" ToolTip="Splits after defeating Azhdaha" />
+        <Setting Id="quest_end_59d515cfe12ef084d8df7ab2c38cce21" Label="Quest: The Darkest of Souls" State="false" ToolTip="Splits after defeating Azhdaha" />
         <!-- 
             59d515cfe12ef084d8df7ab2c38cce21
             
@@ -101,7 +99,7 @@
             Convince the Darkest of Souls
          -->
 
-        <Setting Id="quest_end_0e3ee840951882f488ac11cf427a468b" Label="The Celestial Guardians" State="false" ToolTip="Splits after getting all 4 celestials" />
+        <Setting Id="quest_end_0e3ee840951882f488ac11cf427a468b" Label="Quest: The Celestial Guardians" State="false" ToolTip="Splits after getting all 4 celestials" />
         <!-- 
             0e3ee840951882f488ac11cf427a468b
 
@@ -111,7 +109,7 @@
             Summon Satevis, Guardian of the South
          -->
 
-        <Setting Id="quest_end_5c788318b1a856943aadce9af84d8000" Label="Return to the Past" State="false" ToolTip="Splits after defeating Varham 2" />
+        <Setting Id="quest_end_5c788318b1a856943aadce9af84d8000" Label="Quest: Return to the Past" State="false" ToolTip="Splits after defeating Varham 2" />
         <!-- 
             5c788318b1a856943aadce9af84d8000
 
@@ -119,7 +117,7 @@
             Neutralize Vahram and save Ghassan
          -->
 
-        <Setting Id="quest_end_959814af55fa48b4b962f7cff039f076" Label="Father and Son" State="false" ToolTip="Splits after defeating King Darius" />
+        <Setting Id="quest_end_959814af55fa48b4b962f7cff039f076" Label="Quest: Father and Son" State="false" ToolTip="Splits after defeating King Darius" />
         <!-- 
             959814af55fa48b4b962f7cff039f076
 

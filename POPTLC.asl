@@ -355,7 +355,7 @@ isLoading
 
 split
 {
-    if (settings["inlevel"] && old.shortLevel != current.shortLevel && vars.CheckSplit("inlevel_" + current.shortLevel))
+    if (settings["quest"] && old.shortLevel != current.shortLevel && vars.CheckSplit("inlevel_" + current.shortLevel))
     {
         return true;
     }
