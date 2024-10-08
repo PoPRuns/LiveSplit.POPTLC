@@ -1,3 +1,9 @@
+# Notice
+
+**8th October, 2024** - The contents of this repository has been moved to the [repo](https://github.com/PoPRuns/PoP.AutoSplitters) containing all the other Prince of Persia Autosplitters and will be maintained there.
+
+---
+
 # LiveSplit.POPTLC
 
 Autosplitter for Prince of Persia: The Lost Crown. Developed by diggity and Meta for the $10,000 Speedrun.com challenge.
